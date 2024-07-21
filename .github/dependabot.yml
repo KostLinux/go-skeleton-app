@@ -3,7 +3,7 @@ version: 2
 updates:
   # Maintain dependencies for Composer
   - package-ecosystem: "gomod"
-    directory: "./"
+    directory: "/"
     reviewers:
       - "Matrix278"
       - "KostLinux"
