@@ -63,12 +63,9 @@ jobs:
           env:
             REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
             REGISTRY_ALIAS: a7x2s9j3
-            REPOSITORY: lookinlabs-lab-images
+            REPOSITORY: go-skeleton-app
             IMAGE_TAG: ${{ github.sha }}
           run: |
-            docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG .
+            docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:latest .
             docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
-  
-        - name: Output image URI
-          run: |
-            echo "Image URI: $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG"
+            docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:latest
