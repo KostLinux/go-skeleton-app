@@ -1,6 +1,6 @@
 # Build image
 
-FROM golang:1.19.13-alpine3.18 as builder
+FROM golang:1.22-alpine3.20 as builder
 
 ## API Port
 ENV GOPROXY=http://proxy.golang.org,direct
@@ -29,7 +29,7 @@ RUN go mod download
 
 ######################
 # Application image
-FROM golang:1.19.13-alpine3.18
+FROM golang:1.22-alpine3.20
 
 WORKDIR /app
 
