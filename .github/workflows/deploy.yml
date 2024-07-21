@@ -36,6 +36,8 @@ jobs:
             skip-pkg-cache: true
 
     build_and_push:
+      needs:
+        - verify_backend_quality
       name: Build and Push Docker Image to AWS ECR Public
       runs-on: ubuntu-latest
   
