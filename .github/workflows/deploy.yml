@@ -1,5 +1,5 @@
-name: Verify Code
-run-name: Verify code changes
+name: Verify Code & Build
+run-name: Verify code and build image
 on:
   push:
     branches:
