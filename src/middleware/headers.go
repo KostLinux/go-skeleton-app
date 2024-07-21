@@ -5,13 +5,13 @@ import (
 )
 
 // SecurityHeaders returns a middleware handler function that sets security-related headers.
-func SecurityHeaders() gin.HandlerFunc {
-	return func(c *gin.Context) {
-		c.Header("X-Frame-Options", "DENY")
-		c.Header("Content-Security-Policy", "default-src 'self'; connect-src *; font-src *; script-src-elem * 'unsafe-inline'; img-src * data:; style-src * 'unsafe-inline';")
-		c.Header("X-XSS-Protection", "1; mode=block")
-		c.Header("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload")
-		c.Header("Referrer-Policy", "strict-origin")
-		c.Header("Permissions-Policy", "geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()")
+func headers() gin.HandlerFunc {
+	return func(ctx *gin.Context) {
+		ctx.Header("X-Frame-Options", "DENY")
+		ctx.Header("Content-Security-Policy", "default-src 'self'; connect-src *; font-src *; script-src-elem * 'unsafe-inline'; img-src * data:; style-src * 'unsafe-inline';")
+		ctx.Header("X-XSS-Protection", "1; mode=block")
+		ctx.Header("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload")
+		ctx.Header("Referrer-Policy", "strict-origin")
+		ctx.Header("Permissions-Policy", "geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()")
 	}
 }
