@@ -1,0 +1,126 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/": {
+            "get": {
+                "description": "Returns a welcome message",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "welcome"
+                ],
+                "summary": "Get welcome message",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.WelcomeResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/controller.WelcomeErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/notbad": {
+            "get": {
+                "description": "Returns status 200 if X-Header: NotBad is present",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "check"
+                ],
+                "summary": "Check for NotBad request",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.NotBadResponse"
+                        },
+                        "headers": {
+                            "X-Header": {
+                                "type": "string",
+                                "description": "NotBad"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/controller.NotBadErrorResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "controller.NotBadErrorResponse": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string",
+                    "example": "400"
+                },
+                "message": {
+                    "type": "string",
+                    "example": "Invalid header: VeryBad! Only NotBad can be used"
+                }
+            }
+        },
+        "controller.NotBadResponse": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string",
+                    "example": "200"
+                },
+                "message": {
+                    "type": "string",
+                    "example": "NotBad request received!"
+                }
+            }
+        },
+        "controller.WelcomeErrorResponse": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string",
+                    "example": "400"
+                },
+                "message": {
+                    "type": "string",
+                    "example": "Method Not Allowed"
+                }
+            }
+        },
+        "controller.WelcomeResponse": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string",
+                    "example": "200"
+                },
+                "message": {
+                    "type": "string",
+                    "example": "Welcome to the Skeleton Web App!"
+                }
+            }
+        }
+    }
+}

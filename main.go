@@ -8,16 +8,15 @@ import (
 	"skeleton-web-app/src/middleware"
 	"time"
 
+	_ "skeleton-web-app/docs"
+
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
 	router := gin.New()
-
-	// Pass the router to the middleware.Router function
 	httpMiddleware := middleware.Router(router)
 
-	// Check environment variables for TLS mode
 	tlsMode := os.Getenv("TLS_MODE") == "true"
 	httpVersion := os.Getenv("HTTP_VERSION") == "2"
 

@@ -1,0 +1,83 @@
+definitions:
+  controller.NotBadErrorResponse:
+    properties:
+      code:
+        example: "400"
+        type: string
+      message:
+        example: 'Invalid header: VeryBad! Only NotBad can be used'
+        type: string
+    type: object
+  controller.NotBadResponse:
+    properties:
+      code:
+        example: "200"
+        type: string
+      message:
+        example: NotBad request received!
+        type: string
+    type: object
+  controller.WelcomeErrorResponse:
+    properties:
+      code:
+        example: "400"
+        type: string
+      message:
+        example: Method Not Allowed
+        type: string
+    type: object
+  controller.WelcomeResponse:
+    properties:
+      code:
+        example: "200"
+        type: string
+      message:
+        example: Welcome to the Skeleton Web App!
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /:
+    get:
+      consumes:
+      - application/json
+      description: Returns a welcome message
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controller.WelcomeResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/controller.WelcomeErrorResponse'
+      summary: Get welcome message
+      tags:
+      - welcome
+  /notbad:
+    get:
+      consumes:
+      - application/json
+      description: 'Returns status 200 if X-Header: NotBad is present'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Header:
+              description: NotBad
+              type: string
+          schema:
+            $ref: '#/definitions/controller.NotBadResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/controller.NotBadErrorResponse'
+      summary: Check for NotBad request
+      tags:
+      - check
+swagger: "2.0"

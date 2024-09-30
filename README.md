@@ -1,34 +1,30 @@
-# Go Skeleton Application
+# Go Skeleton Application (QA)
 
-Go skeleton application repository used for production-ready golang applications via golang best practices meshed with MVC architecture.
+Go Skeleton QA Application is used for the QA technical check for the necessary knowledge about automation.
 
 Available Make functions:
 
 - make build - Compile the code
-- make air - Run the code with Golang Hot Reloader (Air)
 - make run - Run the code without Hot Reloader
 - make fumpt - Run gofumpt
 - make mod-vendor - Run go mod vendor
 - make linter - Run golangci-lint
 - make gosec - Run gosec
-- make test - Run tests
 - make validate - Run all linter, gosec and tests
-- make migrate-up - Run database migrations
-- make migrate-down - Rollback database migrations
-- make migrate-create - Create a new database migration
 
 ## Getting started
 
-You can pull the example application from [AWS ECR Repository](https://gallery.ecr.aws/c2w5h6c4/go-skeleton-app).
+**1. Run the application**
 
-It doesn't use any versioning system for purpose of simplicity. You can use the following command to pull the image:
+Run the application via make run
 
-```bash
-docker pull public.ecr.aws/c2w5h6c4/go-skeleton-app:latest
+```
+make run
 ```
 
-```bash
-curl https://localhost:8080/ -k -v
-```
+## QA Phase
 
-The <tag> part is the version of the image you want to pull.
+1. Why does /not-bad endpoint fail even with header?
+2. Try to look at the headers in request using Curl, what will you notice? (hint: Status)
+
+The docs are available [here](http://localhost:8080/swagger/index.html)

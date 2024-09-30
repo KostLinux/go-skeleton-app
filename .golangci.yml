@@ -2,9 +2,6 @@ run:
   # Default concurrency is an available CPU number
   concurrency: 4
 
-  # Timeout for analysis, e.g. 30s, 5m, default is 1m
-  deadline: 5m
-
   # Include test files or not, default is true
   tests: true
 
@@ -25,8 +22,6 @@ linters:
     - durationcheck
     - errcheck
     - errchkjson
-    - execinquery
-    - exportloopref
     - forbidigo
     - gocognit
     - goconst
