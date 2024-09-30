@@ -2,6 +2,8 @@
 
 Go Skeleton QA Application is used for the QA technical check for the necessary knowledge about automation.
 
+The application is built using basic MVC layered architecture.
+
 Available Make functions:
 
 - make build - Compile the code
@@ -31,7 +33,13 @@ make run
 ## QA Phase
 
 1. Why does /not-bad endpoint fail even with header?
-2. Try to look at the headers in request using Curl, what will you notice? (hint: Status)
+
+2. Try to look at the headers in response using Curl, what will you notice? 
+
+Make a request `curl http://localhost:8080/ -I` & `http://localhost:8080/` and compare the responses.
+
+Find out, why HTTP status codes are different.
+
 3. Write test cases for the controller package
 
 The docs are available [here](http://localhost:8080/swagger/index.html)
