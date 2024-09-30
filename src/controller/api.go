@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"net/http"
 	"skeleton-web-app/pkg/status"
 
 	"github.com/gin-gonic/gin"
@@ -16,7 +17,7 @@ import (
 // @Failure 400 {object} WelcomeErrorResponse
 // @Router / [get]
 func GetWelcomeString(ctx *gin.Context) {
-	if ctx.Request.Method != "GET" {
+	if ctx.Request.Method != http.MethodGet {
 		status.AbortWithStatusJSON(ctx, "Method Not Allowed")
 		return
 	}

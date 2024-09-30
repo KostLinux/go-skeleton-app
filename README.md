@@ -14,7 +14,13 @@ Available Make functions:
 
 ## Getting started
 
-**1. Run the application**
+**1. Clone the repository**
+
+```
+git clone git@github.com:KostLinux/go-skeleton-app.git -b qa
+```
+
+**2. Run the application**
 
 Run the application via make run
 
@@ -26,5 +32,6 @@ make run
 
 1. Why does /not-bad endpoint fail even with header?
 2. Try to look at the headers in request using Curl, what will you notice? (hint: Status)
+3. Write test cases for the controller package
 
 The docs are available [here](http://localhost:8080/swagger/index.html)

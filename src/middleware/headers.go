@@ -14,5 +14,4 @@ func headers() gin.HandlerFunc {
 		ctx.Header("Referrer-Policy", "strict-origin")
 		ctx.Header("Permissions-Policy", "geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()")
 	}
-
 }
