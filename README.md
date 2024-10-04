@@ -40,6 +40,10 @@ Make a request `curl http://localhost:8080/ -I` & `http://localhost:8080/` and c
 
 Find out, why HTTP status codes are different.
 
-3. Write test cases for the controller package
+3. Write a test case, which tests whether the rate limiter works properly
+
+Write a simple non-functional test using your preferred language to check whether the rate limiter works.
+
+4. Write test cases for the controller package (optional)
 
 The docs are available [here](http://localhost:8080/swagger/index.html)
