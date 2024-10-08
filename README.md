@@ -14,6 +14,26 @@ Available Make functions:
 - make gosec - Run gosec
 - make validate - Run all linter, gosec and tests
 
+## Prerequisites
+
+- [Go](https://go.dev/dl/) installed
+
+### Installing Go
+
+Golang installation guide can be seen in [official docs](https://go.dev/doc/install)
+
+The installation files can be found [under downloads](https://go.dev/dl/)
+
+```
+// MacOS
+brew install go
+
+// Linux
+On Ubuntu/Debian-based distros: `sudo apt install golang`
+On RHEL/Fedora: `sudo dnf install golang`
+You can also use Snap to install Go: `sudo snap install go --classic`
+```
+
 ## Getting started
 
 **1. Clone the repository**
@@ -28,10 +48,10 @@ git clone https://github.com/KostLinux/go-skeleton-app.git -b qa
 
 **2. Run the application**
 
-Run the application via make run
+Run the application via `go run main.go`
 
 ```
-make run
+go run main.go
 ```
 
 ## QA Phase
