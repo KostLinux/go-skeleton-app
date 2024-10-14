@@ -60,11 +60,11 @@ go run main.go
 
 2. Try to look at the headers in response using Curl, what will you notice? 
 
-Make a request `curl http://localhost:8080/ -I` & `http://localhost:8080/` and compare the responses.
+Make a request `curl http://localhost:8080/ -I` & `curl http://localhost:8080/` and compare the responses.
 
 Find out, why HTTP status codes are different.
 
-3. Write a test case, which tests whether the rate limiter works properly
+3. Write a simple script, which tests whether the rate limiter works properly
 
 Write a simple non-functional test using your preferred language to check whether the rate limiter works.
 
